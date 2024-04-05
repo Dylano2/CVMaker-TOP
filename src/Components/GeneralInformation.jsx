@@ -37,7 +37,7 @@ export function GeneralInformation() {
   }
 
   return (
-    <section className={'border-4 border-black flex-1 flex flex-col rounded'}>
+    <section className={'border-4 border-black flex-1 flex flex-col rounded shadow-brutal5px02opacity'}>
       <div className={'flex  w-full justify-center border-b-4 border-black p-4 gap-16 '}>
         <InputToEdit valueToDisplay={name} onChange={handleOnChangeName} classForTailwind={nameStyleClassForTailWind} />
         <InputToEdit
@@ -47,12 +47,12 @@ export function GeneralInformation() {
         />
       </div>
 
-      <div className={'mx-auto p-8 text-3xl border-2 border-black shadow rounded my-4 cvTitre'}>
+      <div className={'mx-auto p-8 text-3xl border-2 border-black rounded my-4 shadow-brutal5px05opacity'}>
         <InputToEdit valueToDisplay={cvTitle} onChange={handleOnChangeCvTitle} />
       </div>
 
-      <div className={'grid grid-cols-3'}>
-        <div className={'flex justify-center'}>
+      <div className={'grid grid-cols-3 border-t-2 border-black '}>
+        <div className={'flex justify-center border-r-2 border-black pt-1'}>
           <MicrosoftOutlookLogo size={ICON_SIZE} onClick={() => setEmail('email')} />
           <InputToEdit
             valueToDisplay={email}
@@ -61,7 +61,7 @@ export function GeneralInformation() {
           />
         </div>
 
-        <div className={'flex justify-center'}>
+        <div className={'flex justify-center border-r-2 border-black pt-1'}>
           <PhoneCall size={ICON_SIZE} onClick={() => setTelephone('066666')} />
           <InputToEdit
             valueToDisplay={telephone}
@@ -70,7 +70,7 @@ export function GeneralInformation() {
           />
         </div>
 
-        <div className={'flex justify-center'}>
+        <div className={'flex justify-center pt-1'}>
           <MapPin size={ICON_SIZE} onClick={() => setLocation('paris')} />
           <InputToEdit
             valueToDisplay={location}
