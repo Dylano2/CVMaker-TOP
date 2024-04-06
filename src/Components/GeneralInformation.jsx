@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { InputToEdit } from './Input/InputToEdit.jsx'
+import { InputToEdit } from './Editables/InputToEdit.jsx'
 import { MapPin, MicrosoftOutlookLogo, PhoneCall } from '@phosphor-icons/react'
 
 const ICON_SIZE = 20
@@ -38,7 +38,7 @@ export function GeneralInformation() {
 
   return (
     <section className={'border-4 border-black flex-1 flex flex-col rounded shadow-brutal5px02opacity'}>
-      <div className={'flex  w-full justify-center border-b-4 border-black p-4 gap-16 '}>
+      <div className={'flex w-full justify-center border-b-4 border-black p-4 gap-16 '}>
         <InputToEdit valueToDisplay={name} onChange={handleOnChangeName} classForTailwind={nameStyleClassForTailWind} />
         <InputToEdit
           valueToDisplay={surName}
