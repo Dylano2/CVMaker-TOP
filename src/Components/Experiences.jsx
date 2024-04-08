@@ -46,7 +46,7 @@ export function Experiences() {
   return (
     <section className={'border-4 border-black flex-[2] max-h-[50%] rounded'}>
       <h2 className={'font-medium text-2xl p-2 border-b-4 border-black'}>Experiences</h2>
-      <div className={'p-4 flex flex-col gap-2'}>
+      <div className={'p-4 grid gap-2 ' + (experiences.length <= 3 ? 'grid-cols-1' : 'grid-cols-2')}>
         {experiences.map((experience) => (
           <ExperienceToEdit
             key={experience.id}
@@ -55,16 +55,19 @@ export function Experiences() {
             onDeleteExperience={onDelete}
           />
         ))}
-        <button
-          onClick={() =>
-            setExperiences(() => {
-              setIdCount(idCount + 1)
-              return [...experiences, { ...experiences[experiences.length - 1], id: idCount }]
-            })
-          }
-        >
-          <PlusCircle size={32} />
-        </button>
+
+        {experiences.length < 8 && (
+          <button
+            onClick={() =>
+              setExperiences(() => {
+                setIdCount(idCount + 1)
+                return [...experiences, { ...experiences[experiences.length - 1], id: idCount }]
+              })
+            }
+          >
+            <PlusCircle size={32} />
+          </button>
+        )}
       </div>
     </section>
   )
