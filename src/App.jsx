@@ -30,6 +30,7 @@ function App() {
           <input type={'checkbox'} checked={toggleData} />
           {' ajouter / supprimer des data '}
         </label>
+        <input type="color" />
       </div>
       <CVFile />
     </>

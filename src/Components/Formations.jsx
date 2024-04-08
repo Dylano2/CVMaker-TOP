@@ -46,12 +46,9 @@ export function Formations() {
   const borderClassTopAndBottom =
     ' w-0.5 h-1/2 -left-[0.813rem] top-2 absolute bg-black ' +
     ' before:bg-black before:h-[173%] before:w-0.5 before:top-full before:absolute'
-  const borderClass =
-    ' w-0.5 h-1/2 -left-[0.813rem] top-2 absolute' +
-    ' before:bg-black before:h-[173%] before:w-0.5 before:top-full before:absolute'
 
   return (
-    <section className={'border-4 border-black flex-[2] max-h-[50%] resizable rounded'}>
+    <section className={'border-4 border-black flex-[2] max-h-[50%] rounded shadow-brutal5px02opacity'}>
       <h2 className={'font-medium text-2xl p-2 border-b-4 border-black'}>Formations</h2>
       <div
         className={

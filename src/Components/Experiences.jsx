@@ -51,7 +51,7 @@ export function Experiences() {
   }
 
   return (
-    <section className={'border-4 border-black flex-[2] max-h-[50%] rounded'}>
+    <section className={'border-4 border-black flex-[2] shadow-brutal5px02opacity max-h-[50%] rounded'}>
       <div className={'relative font-medium text-2xl p-2 border-b-4 border-black'}>
         <h2>Experiences</h2>
         {experiences.length <= 3 && (
