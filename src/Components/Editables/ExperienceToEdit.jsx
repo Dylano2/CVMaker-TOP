@@ -11,8 +11,8 @@ export function ExperienceToEdit({ experience, onUpdateExperience, onDeleteExper
   const classForNomDuMetier = ' font-bold'
   return (
     <>
-      <div className={'flex border-2 rounded border-black p-2 shadow-brutal5px05opacity '}>
-        <button onClick={() => onDeleteExperience(experience.id)}>
+      <div className={'flex border-2 rounded border-black p-2 shadow-brutal5px05opacity relative'}>
+        <button onClick={() => onDeleteExperience(experience.id)} className={'absolute top-0 right-0'}>
           <MinusCircle size={32} />
         </button>
         <div className={'border-2 border-black rounded h-fit my-auto p-1 bg-gray-950 bg-opacity-20'}>
