@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const MAX_INPUT = 40
 // eslint-disable-next-line react/prop-types
-export function InputToEdit({ valueToDisplay, onChange, classForTailwind }) {
+export function InputToEdit({ valueToDisplay, onChange, classForTailwind, name }) {
   const [isEditing, setIsEditing] = useState(false)
   return (
     <>
@@ -12,6 +12,7 @@ export function InputToEdit({ valueToDisplay, onChange, classForTailwind }) {
           onBlur={() => {
             setIsEditing(false)
           }}
+          name={name ? name : ''}
           value={valueToDisplay}
           onChange={onChange}
           autoFocus

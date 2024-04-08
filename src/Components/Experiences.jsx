@@ -1,18 +1,68 @@
 import { useState } from 'react'
-import { PlusCircle } from '@phosphor-icons/react'
 import { ExperienceToEdit } from './Editables/ExperienceToEdit.jsx'
+import { PlusCircle } from '@phosphor-icons/react'
 
 export function Experiences() {
-  const [experienceCount, setExperienceCount] = useState(1)
+  const [experiences, setExperiences] = useState([
+    {
+      id: 1,
+      ville: 'dijon',
+      dateDebut: '20-20-2005',
+      dateFin: '2',
+      entreprise: 'Ecorp',
+      nomDuMetier: 'Caissier',
+      description: 'e',
+    },
+    {
+      id: 2,
+      ville: 'Lyon',
+      dateDebut: '20-20-2005',
+      dateFin: '2',
+      entreprise: 'google',
+      nomDuMetier: 'googleman',
+      description: 'e',
+    },
+  ])
+
+  const [idCount, setIdCount] = useState(experiences.length + 1)
+
+  function onUpdate(updatedExperience) {
+    setExperiences((previousExperiences) => {
+      return previousExperiences.map((experience) => {
+        if (experience.id === updatedExperience.id) {
+          return { ...experience, ...updatedExperience }
+        }
+        return experience
+      })
+    })
+  }
+
+  function onDelete(idToDelete) {
+    setExperiences((previousExperiences) => {
+      return previousExperiences.filter((experince) => experince.id !== idToDelete)
+    })
+  }
 
   return (
     <section className={'border-4 border-black flex-[2] max-h-[50%] rounded'}>
       <h2 className={'font-medium text-2xl p-2 border-b-4 border-black'}>Experiences</h2>
       <div className={'p-4 flex flex-col gap-2'}>
-        {[...Array(experienceCount)].map((experience, index) => (
-          <ExperienceToEdit key={'experience_' + index}></ExperienceToEdit>
+        {experiences.map((experience) => (
+          <ExperienceToEdit
+            key={experience.id}
+            onUpdateExperience={onUpdate}
+            experience={experience}
+            onDeleteExperience={onDelete}
+          />
         ))}
-        <button onClick={() => setExperienceCount(experienceCount + 1)}>
+        <button
+          onClick={() =>
+            setExperiences(() => {
+              setIdCount(idCount + 1)
+              return [...experiences, { ...experiences[experiences.length - 1], id: idCount }]
+            })
+          }
+        >
           <PlusCircle size={32} />
         </button>
       </div>
