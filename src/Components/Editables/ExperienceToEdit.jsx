@@ -20,7 +20,7 @@ export function ExperienceToEdit({ experience, onUpdateExperience, onDeleteExper
           <InputToEdit valueToDisplay={experience.dateFin} onChange={handleUpdateExerience} name={'dateFin'} />
         </div>
 
-        <div className={'m-2'}>
+        <div className={'ml-2'}>
           <InputToEdit
             valueToDisplay={experience.nomDuMetier}
             onChange={handleUpdateExerience}
