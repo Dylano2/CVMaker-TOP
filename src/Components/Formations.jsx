@@ -69,11 +69,17 @@ export function Formations() {
               borderClassNames={
                 formations.length === 1
                   ? ''
-                  : index === 0
-                    ? borderClassBottom
-                    : index === formations.length - 1
-                      ? borderClassTop
-                      : borderClassTopAndBottom
+                  : formations.length <= MIN_COUNT_FORMATIONS_TOGGLE_BLOCK_LAYOUT
+                    ? index === 0
+                      ? borderClassBottom
+                      : index === formations.length - 1
+                        ? borderClassTop
+                        : borderClassTopAndBottom
+                    : index === 0 || index === 1
+                      ? borderClassBottom
+                      : index === formations.length - 1 || index === formations.length - 2
+                        ? borderClassTop
+                        : borderClassTopAndBottom
               }
             />
           )
