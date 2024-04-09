@@ -5,13 +5,20 @@ import { MapPin, MicrosoftOutlookLogo, PhoneCall } from '@phosphor-icons/react'
 const ICON_SIZE = 20
 const COMMON_INPUT_CLASS = 'min-h-4 '
 
-export function GeneralInformation() {
-  const [name, setName] = useState('Antoine')
-  const [surName, setSurName] = useState('Lebow')
-  const [cvTitle, setCvTitle] = useState('Web Dev')
-  const [email, setEmail] = useState('a@a.a')
-  const [telephone, setTelephone] = useState('06564578965')
-  const [location, setLocation] = useState('Paris')
+export function GeneralInformation({
+  initialName,
+  initialsurName,
+  initialcvTitle,
+  initialemail,
+  initialtelephone,
+  initiallocation,
+}) {
+  const [name, setName] = useState(initialName)
+  const [surName, setSurName] = useState(initialsurName)
+  const [cvTitle, setCvTitle] = useState(initialcvTitle)
+  const [email, setEmail] = useState(initialemail)
+  const [telephone, setTelephone] = useState(initialtelephone)
+  const [location, setLocation] = useState(initiallocation)
 
   const nameStyleClassForTailWind = COMMON_INPUT_CLASS + 'w-full text-center overflow-hidden text-2xl font-bold'
   const dataInformationClassForTailWind = COMMON_INPUT_CLASS + ' w-fit'

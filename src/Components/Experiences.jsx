@@ -4,27 +4,8 @@ import { PlusCircle, Rows, SquaresFour } from '@phosphor-icons/react'
 
 const MAX_COUNT_EXPERIENCES = 6
 const MIN_COUNT_EXPERIENCES_TOGGLE_BLOCK_LAYOUT = 3
-export function Experiences() {
-  const [experiences, setExperiences] = useState([
-    {
-      id: 1,
-      ville: 'dijon',
-      dateDebut: '20-20-2005',
-      dateFin: '2',
-      entreprise: 'Ecorp',
-      nomDuMetier: 'Caissier',
-      description: 'e',
-    },
-    {
-      id: 2,
-      ville: 'Lyon',
-      dateDebut: '20-20-2005',
-      dateFin: '2',
-      entreprise: 'google',
-      nomDuMetier: 'googleman',
-      description: 'e',
-    },
-  ])
+export function Experiences({ initialExperiences }) {
+  const [experiences, setExperiences] = useState([...initialExperiences])
 
   const [idCount, setIdCount] = useState(experiences.length + 1)
 

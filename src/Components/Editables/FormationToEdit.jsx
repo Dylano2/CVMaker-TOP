@@ -29,6 +29,7 @@ function FormationToEdit({ borderClassNames, formation, onDeleteFormation, onUpd
               name={'etablissement'}
               onChange={handleUpdateFormation}
               valueToDisplay={formation.etablissement}
+              classForTailwind={'uppercase font-medium tracking-tight text-sm'}
             />
             <InputToEdit
               name={'villeObtention'}

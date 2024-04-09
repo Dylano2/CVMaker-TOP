@@ -16,8 +16,18 @@ export function ExperienceToEdit({ experience, onUpdateExperience, onDeleteExper
           <MinusCircle size={32} />
         </button>
         <div className={'border-2 border-black rounded h-fit my-auto p-1 bg-gray-950 bg-opacity-20'}>
-          <InputToEdit valueToDisplay={experience.dateDebut} onChange={handleUpdateExerience} name={'dateDebut'} />
-          <InputToEdit valueToDisplay={experience.dateFin} onChange={handleUpdateExerience} name={'dateFin'} />
+          <InputToEdit
+            valueToDisplay={experience.dateDebut}
+            onChange={handleUpdateExerience}
+            name={'dateDebut'}
+            classForTailwind={''}
+          />
+          <InputToEdit
+            valueToDisplay={experience.dateFin}
+            onChange={handleUpdateExerience}
+            name={'dateFin'}
+            classForTailwind={'text-nowrap'}
+          />
         </div>
 
         <div className={'ml-2'}>
@@ -36,7 +46,12 @@ export function ExperienceToEdit({ experience, onUpdateExperience, onDeleteExper
             />
             <InputToEdit valueToDisplay={experience.ville} onChange={handleUpdateExerience} name={'ville'} />
           </div>
-          <InputToEdit valueToDisplay={experience.description} onChange={handleUpdateExerience} name={'description'} />
+          <InputToEdit
+            valueToDisplay={experience.description}
+            type={'textarea'}
+            onChange={handleUpdateExerience}
+            name={'description'}
+          />
         </div>
       </div>
     </>

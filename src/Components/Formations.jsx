@@ -2,25 +2,10 @@ import FormationToEdit from './Editables/FormationToEdit.jsx'
 import { useState } from 'react'
 import { PlusCircle } from '@phosphor-icons/react'
 
-const MAX_COUNT_FORMATIONS = 6
-const MIN_COUNT_FORMATIONS_TOGGLE_BLOCK_LAYOUT = 3
-export function Formations() {
-  const [formations, setFormations] = useState([
-    {
-      id: 1,
-      nomDuDiplome: 'Technicien supérieur',
-      etablissement: 'Ma superbe ecole',
-      dateObtention: '2025',
-      villeObtention: 'Lyonzon',
-    },
-    {
-      id: 2,
-      nomDuDiplome: 'Technicien supérieur',
-      dateObtention: '2025',
-      villeObtention: 'Lyonzon',
-      etablissement: 'Ma superbe ecole',
-    },
-  ])
+const MAX_COUNT_FORMATIONS = 4
+const MIN_COUNT_FORMATIONS_TOGGLE_BLOCK_LAYOUT = 2
+export function Formations({ initialFormations }) {
+  const [formations, setFormations] = useState(initialFormations)
 
   const [idCount, setIdCount] = useState(formations.length + 1)
 
